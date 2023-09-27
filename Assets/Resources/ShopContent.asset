@@ -9,18 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69ea0d5f53a18f0439653b93aa8a7b87, type: 3}
+  m_Script: {fileID: 11500000, guid: 18a309da989ae964baf05e11cb75d626, type: 3}
   m_Name: ShopContent
   m_EditorClassIdentifier: 
-  _modelItems:
-  - {fileID: 11400000, guid: 1fcd20a50de530841bb14971d8623b1d, type: 2}
-  - {fileID: 11400000, guid: 90f286c704f595a46b71c1c055ebdec0, type: 2}
-  - {fileID: 11400000, guid: 30eb46f5d1008a141b6b3786a14b8f00, type: 2}
-  - {fileID: 11400000, guid: 76181260a5f11e14fb87039215909aab, type: 2}
-  _skinItems:
-  - {fileID: 11400000, guid: eff5b495806a0b8458f639b613731582, type: 2}
-  - {fileID: 11400000, guid: 4507f3e2062f9d443ac0fedd4fc6fbc0, type: 2}
-  - {fileID: 11400000, guid: e86dec4bf5a18b741a5080da4d2effe3, type: 2}
-  - {fileID: 11400000, guid: 4c6a9bdfb73d9e04e941d8d4e40dbdbf, type: 2}
-  - {fileID: 11400000, guid: de626825a2d99fc44bcf841a2eaafcbc, type: 2}
-  - {fileID: 11400000, guid: 4145c3d8f94a1994fb79e884febcc630, type: 2}
+  _characterSkinItems:
+  - {fileID: 11400000, guid: 3753c121869c99542a2cc916085be28f, type: 2}
+  - {fileID: 11400000, guid: e606c5354fa04ba45b17fbf4a70b96fd, type: 2}
+  - {fileID: 11400000, guid: e96a2d3d4472dff4a8adf38f305a364e, type: 2}
+  - {fileID: 11400000, guid: be2040bf7e8569849b17150e96213900, type: 2}
+  _mazeSkinItems:
+  - {fileID: 11400000, guid: 19ef45c4dd83b084393152d1d8b2f3f3, type: 2}
+  - {fileID: 11400000, guid: c8bf06bfba81f09448d7b2f2a741974b, type: 2}
+  - {fileID: 11400000, guid: 1b480c0e8225977478a13bfa7d8ddb57, type: 2}
+  - {fileID: 11400000, guid: 5bd958b6229b49643934dccedc88dc58, type: 2}
+  - {fileID: 11400000, guid: f0585bf762a535d44adcdd62c7310f02, type: 2}
+  - {fileID: 11400000, guid: d1e436293dbef0e44a2dc97531e0303f, type: 2}
+  - {fileID: 11400000, guid: d941ba73c008f26449528e9e43c43bf6, type: 2}

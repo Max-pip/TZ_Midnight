@@ -1,14 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private CarController _carController;
+    private CarController _carController;
 
-    private void Update()
+    public void Initialization(CarController carController)
     {
-        //SetMobileMove();
-        //SetMoveValues();
+        _carController = carController;
     }
 
     public void OnForwardButtonDown()
@@ -39,11 +37,5 @@ public class PlayerInput : MonoBehaviour
     public void OnHorizontalButtonUp()
     {
         _carController.TurnValue = 0;
-    }
-
-    private void SetMoveValues()
-    {
-        _carController.ForwardValue = Input.GetAxisRaw(Constants.Vertical);
-        _carController.TurnValue = Input.GetAxisRaw(Constants.Horizontal);
     }
 }

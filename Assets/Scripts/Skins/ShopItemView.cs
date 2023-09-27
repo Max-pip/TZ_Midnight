@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -19,15 +17,17 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
     [SerializeField] private IntValueView _priceView;
 
     [SerializeField] private Image _selectionText;
+
     private Image _backgroundImage;
 
     public ShopItem Item { get; private set; }
+
     public bool IsLock { get; private set; }
+
     public int Price => Item.Price;
     public GameObject Model => Item.Model;
 
-
-    public void Initialization(ShopItem item)
+    public void Initialize(ShopItem item)
     {
         _backgroundImage = GetComponent<Image>();
         _backgroundImage.sprite = _standardBackground;
@@ -39,14 +39,18 @@ public class ShopItemView : MonoBehaviour, IPointerClickHandler
         _priceView.Show(Price);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Click?.Invoke(this);
-    }
+    public void OnPointerClick(PointerEventData eventData) => Click?.Invoke(this);
 
     public void Lock()
     {
         IsLock = true;
+        _lockImage.gameObject.SetActive(IsLock);
+        _priceView.Show(Price);
+    }
+
+    public void Unlock()
+    {
+        IsLock = false;
         _lockImage.gameObject.SetActive(IsLock);
         _priceView.Hide();
     }

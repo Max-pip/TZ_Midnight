@@ -7,7 +7,8 @@ public class CarController : MonoBehaviour
     #region Fields
     public event Action OnScoreUpdate;
 
-    [SerializeField] private Rigidbody _rigidbody;
+    [field: SerializeField] public Rigidbody Rigidbody { get;  private set; }
+    [field: SerializeField] public Transform DetailSpawn { get; private set; }
 
     [Header("Update Parameters")]
     [SerializeField] private float _updateAccel = 15f;
@@ -57,12 +58,7 @@ public class CarController : MonoBehaviour
     private MeshCollider _myMeshCollider;
     #endregion
 
-    private void Update()
-    {
-        Debug.DrawRay(transform.position, _rigidbody.velocity / 2, Color.green);
-    }
-
-    private void Start()
+    public void Initialization()
     {
         AllForStart();
     }
@@ -72,7 +68,7 @@ public class CarController : MonoBehaviour
         _myMeshCollider = GetComponentInChildren<MeshCollider>();
         _bounds = GetBounds(gameObject);
 
-        _rigidbody.centerOfMass = Vector3.Scale(_bounds.extents, _centerOfMass);
+        Rigidbody.centerOfMass = Vector3.Scale(_bounds.extents, _centerOfMass);
     }
 
     private void FixedUpdate()
@@ -86,7 +82,7 @@ public class CarController : MonoBehaviour
 
         FixedUpdateMethods();
 
-        _rigidbody.velocity = transform.TransformDirection(_velocityVector);
+        Rigidbody.velocity = transform.TransformDirection(_velocityVector);
     }
 
     #region FixedUpdateMethods
@@ -150,7 +146,7 @@ public class CarController : MonoBehaviour
 
     private void RotateVelocityVector()
     {
-        _velocityVector = transform.InverseTransformDirection(_rigidbody.velocity);
+        _velocityVector = transform.InverseTransformDirection(Rigidbody.velocity);
 
         if (_isRotating)
         {
@@ -186,13 +182,13 @@ public class CarController : MonoBehaviour
     {
         if (ForwardValue > 0.5f || ForwardValue < -0.5f)
         {
-            _rigidbody.velocity += transform.forward * ForwardValue * _accel * Time.deltaTime;
+            Rigidbody.velocity += transform.forward * ForwardValue * _accel * Time.deltaTime;
             _gripZ = 0f;
         }
 
         _isRotating = false;
 
-        _pVelocityVector = transform.InverseTransformDirection(_rigidbody.velocity);
+        _pVelocityVector = transform.InverseTransformDirection(Rigidbody.velocity);
 
         if (TurnValue > 0.5f || TurnValue < -0.5f)
         {

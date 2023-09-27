@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e227c9cc0e2e54bbe53443db2a81de, type: 3}
+  m_Name: DetailsFactory
+  m_EditorClassIdentifier: 
+  _default: {fileID: 7486384013581909411, guid: 5d05b571d1e4b0c4fa36dacf06158b84,
+    type: 3}
+  _dino: {fileID: 6819362167011239439, guid: 6a8514d5d9f9295489c6a7645b172702, type: 3}
+  _dog: {fileID: 5397895127878451582, guid: bd769142c32a11c46b07aef401e801bc, type: 3}
+  _horse: {fileID: 7002995172860961318, guid: 3e5537c817ecdf341a387b87fb0b81bc, type: 3}
+  _goblin: {fileID: 6701702816092944808, guid: 2ffb373d6afde6c4587c70a27675887d, type: 3}
+  _figure: {fileID: 3642908629318893274, guid: 4d185833d4870bb42acb9c148cc4aaa0, type: 3}
+  _officer: {fileID: 8843166402002762094, guid: 18efb4eda864fbb41b7948e3c95bd437,
+    type: 3}

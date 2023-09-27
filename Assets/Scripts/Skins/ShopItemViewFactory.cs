@@ -1,31 +1,40 @@
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ShopItemViewFactory", menuName = "Shop/ShopItemViewFactory")]
 public class ShopItemViewFactory : ScriptableObject
 {
-    [SerializeField] private ShopItemView _modelItemPrefab;
-    [SerializeField] private ShopItemView _skinItemPrefab;
-
+    [SerializeField] private ShopItemView _characterSkinItemPrefab;
+    [SerializeField] private ShopItemView _detailSkinItemPrefab;
+    
     public ShopItemView Get(ShopItem shopItem, Transform parent)
     {
-        ShopItemView instance;
+        ShopItemVisitor visitor = new ShopItemVisitor(_characterSkinItemPrefab, _detailSkinItemPrefab);
+        visitor.Visit(shopItem);
 
-        switch (shopItem)
-        {
-            case ModelItem modelItem:
-                instance = Instantiate(_modelItemPrefab, parent);
-                break;
+        ShopItemView instance = Instantiate(visitor.Prefab, parent);
+        instance.Initialize(shopItem);
 
-            case SkinItem skinItem:
-                instance = Instantiate(_skinItemPrefab, parent);
-                break;
-
-            default:
-                throw new ArgumentException(nameof(shopItem));
-        }
-
-        instance.Initialization(shopItem);
         return instance;
     }
+
+    private class ShopItemVisitor : IShopItemVisitor
+    {
+        private ShopItemView _characterSkinItemPrefab;
+        private ShopItemView _detailSkinItemPrefab;
+
+        public ShopItemVisitor(ShopItemView characterSkinItemPrefab, ShopItemView detailSkinItemPrefab)
+        {
+            _characterSkinItemPrefab = characterSkinItemPrefab;
+            _detailSkinItemPrefab = detailSkinItemPrefab;
+        }
+
+        public ShopItemView Prefab { get; private set; }
+
+        public void Visit(ShopItem shopItem) => Visit((dynamic)shopItem);
+
+        public void Visit(CharacterSkinItem characterSkinItem) => Prefab = _characterSkinItemPrefab;
+
+        public void Visit(DetailSkinItem detailSkinItem) => Prefab = _detailSkinItemPrefab;
+    }
+    
 }

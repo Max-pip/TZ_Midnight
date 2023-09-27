@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c9170676375544db7a8e87b4721cdc, type: 3}
+  m_Name: CharactersFactory
+  m_EditorClassIdentifier: 
+  _toyota: {fileID: 1616086121304822368, guid: 56e4c42b1698584439e224899f929c28, type: 3}
+  _renault: {fileID: 3545103494762966536, guid: 7d94e134a3257e34287b4aeb9477457b,
+    type: 3}
+  _subaru: {fileID: 7322588102542120771, guid: 678a0556a7e32cf40bc48632bab583fb, type: 3}
+  _porsche: {fileID: 2832394747950647091, guid: fe30b0f4d5085b14ca07ac6415c4aaf0,
+    type: 3}

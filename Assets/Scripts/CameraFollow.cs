@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
-    [SerializeField] private Rigidbody _targetRigidbody;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private float _speed;
+    private Transform _target;
+    private Rigidbody _targetRigidbody;
+
+    public void Initialization(Transform target, Rigidbody targetRigidbody)
+    {
+        _target = target;
+        _targetRigidbody = targetRigidbody;
+    }
 
     void FixedUpdate()
     {
