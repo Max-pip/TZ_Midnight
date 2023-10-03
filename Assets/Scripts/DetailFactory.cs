@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using UnityEngine;
 
@@ -14,7 +15,12 @@ public class DetailFactory : ScriptableObject
 
     public GameObject Get(DetailSkins skinType, Vector3 spawnPosition, Transform parent)
     {
-        GameObject instance = Instantiate(GetPrefab(skinType), spawnPosition, Quaternion.identity, parent);
+        //GameObject instance = Instantiate(GetPrefab(skinType), spawnPosition, Quaternion.identity, parent);
+        //return instance;
+        GameObject instance = PhotonNetwork.Instantiate(GetPrefab(skinType).name, spawnPosition, Quaternion.identity);
+        //Detail detail = instance.GetComponent<Detail>();
+        //detail.Initialization();
+        instance.transform.parent = parent;
         return instance;
     }
 

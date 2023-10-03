@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] private AdManager _adManager;
+    [SerializeField] private PlayerInput _playerInput;
     [SerializeField] private UpdateScoreText _updateScoreText;
     [SerializeField] private Button _multiplyRewardButton;
 
@@ -15,6 +16,7 @@ public class GameOver : MonoBehaviour
 
     public void Initialization(Wallet wallet, IDataProvider dataProvider)
     {
+        _playerInput.gameObject.SetActive(false);
         _multiplyRewardButton.onClick.AddListener(ShowRewardVideo);
         _rewardValueText.text = $"Your reward {_updateScoreText.AllScore}";
         _wallet = wallet;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharactersFactory
   m_EditorClassIdentifier: 
   _toyota: {fileID: 1616086121304822368, guid: 56e4c42b1698584439e224899f929c28, type: 3}
-  _renault: {fileID: 3545103494762966536, guid: 7d94e134a3257e34287b4aeb9477457b,
+  _renault: {fileID: 4588397074725364770, guid: 7d94e134a3257e34287b4aeb9477457b,
     type: 3}
   _subaru: {fileID: 7322588102542120771, guid: 678a0556a7e32cf40bc48632bab583fb, type: 3}
   _porsche: {fileID: 2832394747950647091, guid: fe30b0f4d5085b14ca07ac6415c4aaf0,

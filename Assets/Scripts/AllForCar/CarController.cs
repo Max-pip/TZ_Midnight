@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ public class CarController : MonoBehaviour
 
     [field: SerializeField] public Rigidbody Rigidbody { get;  private set; }
     [field: SerializeField] public Transform DetailSpawn { get; private set; }
+
+    [SerializeField] private PhotonView _photonView;
 
     [Header("Update Parameters")]
     [SerializeField] private float _updateAccel = 15f;
@@ -55,17 +58,16 @@ public class CarController : MonoBehaviour
     private Vector3 _pVelocityVector = new Vector3(0, 0, 0);
 
     private Bounds _bounds;
-    private MeshCollider _myMeshCollider;
+
     #endregion
 
     public void Initialization()
     {
-        AllForStart();
-    }
+        if (_photonView == null)
+        {
+            _photonView = GetComponent<PhotonView>();
+        }
 
-    private void AllForStart()
-    {
-        _myMeshCollider = GetComponentInChildren<MeshCollider>();
         _bounds = GetBounds(gameObject);
 
         Rigidbody.centerOfMass = Vector3.Scale(_bounds.extents, _centerOfMass);
@@ -73,6 +75,8 @@ public class CarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_photonView.IsMine) return;
+
         _accel = _updateAccel;
         _gripX = _updateGripX;
         _gripZ = _updateGripZ;

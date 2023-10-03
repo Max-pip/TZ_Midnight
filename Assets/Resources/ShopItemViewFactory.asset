@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterSkinItemPrefab: {fileID: 7145642969845523870, guid: 289def25552c7a242b54ae2a464b5b5e,
     type: 3}
-  _mazeSkinItemPrefab: {fileID: 206237133626344384, guid: ee5a5f53d4fac0945bb869ced7f8733a,
+  _detailSkinItemPrefab: {fileID: 206237133626344384, guid: ee5a5f53d4fac0945bb869ced7f8733a,
     type: 3}

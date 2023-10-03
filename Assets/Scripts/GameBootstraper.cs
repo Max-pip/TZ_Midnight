@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class GameBootstraper : MonoBehaviour
 {
-    [SerializeField] private Transform _characterSpawnPoint;
     [SerializeField] private CharacterFactory _characterFactory;
     [SerializeField] private DetailFactory _detailFactory;
     [SerializeField] private CameraFollow _cameraFollow;
@@ -43,7 +42,7 @@ public class GameBootstraper : MonoBehaviour
 
     private void SpawnCharacter()
     {
-        _character = _characterFactory.Get(_persistentPlayerData.PlayerData.SelectedCharacterSkin, _characterSpawnPoint.position);
+        _character = _characterFactory.Get(_persistentPlayerData.PlayerData.SelectedCharacterSkin);
         GameObject detail = _detailFactory.Get(_persistentPlayerData.PlayerData.SelectedDetailSkin, _character.DetailSpawn.position, _character.DetailSpawn);
     }
 

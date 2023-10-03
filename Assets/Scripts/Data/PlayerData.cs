@@ -24,16 +24,16 @@ public class PlayerData
     }
 
     [JsonConstructor]
-    public PlayerData(int money, CharacterSkins selectedCharacterSkin, DetailSkins selectedMazeSkin,
-        List<CharacterSkins> openCharacterSkins, List<DetailSkins> openMazeSkins)
+    public PlayerData(int money, CharacterSkins selectedCharacterSkin, DetailSkins selectedDetailSkin,
+        List<CharacterSkins> openCharacterSkins, List<DetailSkins> openDetailSkins)
     {
         Money = money;
 
         _selectedCharacterSkin = selectedCharacterSkin;
-        _selectedDetailSkin = selectedMazeSkin;
+        _selectedDetailSkin = selectedDetailSkin;
 
         _openCharacterSkins = new List<CharacterSkins>(openCharacterSkins);
-        _openDetailSkins = new List<DetailSkins>(openMazeSkins);
+        _openDetailSkins = new List<DetailSkins>(openDetailSkins);
     }
 
     public int Money

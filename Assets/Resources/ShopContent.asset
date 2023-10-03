@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e606c5354fa04ba45b17fbf4a70b96fd, type: 2}
   - {fileID: 11400000, guid: e96a2d3d4472dff4a8adf38f305a364e, type: 2}
   - {fileID: 11400000, guid: be2040bf7e8569849b17150e96213900, type: 2}
-  _mazeSkinItems:
+  _detailSkinItems:
   - {fileID: 11400000, guid: 19ef45c4dd83b084393152d1d8b2f3f3, type: 2}
   - {fileID: 11400000, guid: c8bf06bfba81f09448d7b2f2a741974b, type: 2}
   - {fileID: 11400000, guid: 1b480c0e8225977478a13bfa7d8ddb57, type: 2}
