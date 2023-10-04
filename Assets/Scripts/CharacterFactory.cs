@@ -10,12 +10,9 @@ public class CharacterFactory : ScriptableObject
     [SerializeField] private CarController _subaru;
     [SerializeField] private CarController _porsche;
 
-    public CarController Get(CharacterSkins skinType /*, Vector3 spawnPosition*/)
+    public CarController Get(CharacterSkins skinType)
     {
         Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-40, 40), 0.7f, UnityEngine.Random.Range(-40, 40));
-        //CarController instance = Instantiate(GetPrefab(skinType), spawnPosition, Quaternion.identity, null);
-        //instance.Initialization();
-        //return instance;
         GameObject carPrefab = PhotonNetwork.Instantiate(GetPrefab(skinType).name, spawnPos, Quaternion.identity);
         CarController instance = carPrefab.GetComponent<CarController>();
         instance.Initialization();
